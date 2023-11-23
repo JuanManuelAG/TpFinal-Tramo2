@@ -1,0 +1,136 @@
+#root{
+    height: 675px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+.boxContainer{
+    width: 350px;
+    height: 100%;
+    padding: 17px;
+    border-radius: 15px;
+    background-color: #fbf3f2;
+    box-shadow: 1px 1px  15px ;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.boxBotonHome{
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 15px 15px 30px;
+}
+.boxBotonHome a{
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    color: #000000;
+}
+.boxForm{
+    height: 100%;
+}
+.titulobotonEdit{
+    display: flex;
+    justify-content: space-evenly;
+}
+.tituloEdit{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+.inputTitulo{
+    margin-bottom: 10px;
+}
+.inputTitulo textarea{
+    width: 100%;
+    font-size: 26px;
+    font-family: 'Inter', sans-serif;
+    border:transparent;
+    background-color: #fbf3f2;
+    outline: none;
+    resize: none;
+    color: #000000;
+}
+.inputTitulo textarea::placeholder {
+    color: #777777;
+}
+.inputDescrip textarea {
+    width: 100%;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    color: #06a4d4;
+    border:transparent;
+    background-color: #fbf3f2;
+    outline: none;
+    resize: none;
+}
+.inputDescrip textarea::placeholder {
+    color: #06a4d4;
+}
+
+.boxStyleIcon-Text{
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 10px 0 10px;
+}
+.styleIcon-Text{
+    display: flex;
+}
+.styleIcon-Text span{
+    margin: 7px 0 0 15px;
+    font-family: 'Inter', sans-serif;
+    color: #12507f;
+}
+.note{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px 10px 10px;
+}
+.noteDescript{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 15px 0;
+    font-family: 'Inter', sans-serif;
+    color: #12507f;
+}
+.noteDescript span p{
+    margin-left: 15px;
+}
+.boxDescript{
+    width: 300px;
+    height: 100%;
+    box-shadow: 1px 1px  15px rgba(0, 0, 0, 0.097);
+    border-radius: 10px;
+}
+.boxDescript textarea{
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    border:transparent;
+    background-color: #fbf3f2;
+    outline: none;
+    resize: none;
+    color: #06a4d4;
+    border-radius: 10px;
+}
+.boxDescript textarea::placeholder{
+    color: #28add6a1;
+}
+
+.buttonSave{
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonSave button{
+    padding: 7px 60px 7px 60px;
+    border-radius: 10px;
+    background-color: #fa991c;
+    border: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
