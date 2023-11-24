@@ -9,6 +9,7 @@ const TaskForm = ({tasks, addTask}) => {
     const [subTitulo, setsubTitulo] = useState('');
     const [descripcion, setDescripcion] = useState('');
 
+
     //modificacion del titulo, subtitulo, descripcion por parte del usuario
     const handleTituloChange = (event) => {
       setTitulo(event.target.value);
@@ -29,10 +30,13 @@ const TaskForm = ({tasks, addTask}) => {
         subTitulo,
         descripcion
     }
+
     addTask(newTask); 
     setTitulo('');
     setsubTitulo('');
     setDescripcion('');
+
+    
     };
  
     return(

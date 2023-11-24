@@ -1,0 +1,128 @@
+.boxContainer{
+    width: 350px;
+    height: 100%;
+    padding: 17px;
+    border-radius: 15px;
+    background-color: #fbf3f2;
+    box-shadow: 1px 1px  15px ;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+}
+main, section{
+    height: 85%;
+}
+
+.search{
+    width: 90%;
+    height: 25px;
+    margin: 10px 0 20px 15px;
+    padding: 2px 0 0 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.today-Add{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.boxItem{
+    width: 100%;
+    border: 2px solid #316683;
+    border-radius: 7px;
+    height: 31em;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+}
+.Item{
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+}
+.check-Title{
+    width: 250px;
+    display: flex;
+    margin: 0 0 0 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.check-Title label{
+    cursor: pointer;
+}
+.check-Title label input{
+    display: none;
+}
+.check-Title label span{
+    display: inline-block;
+    position: relative;
+    height: 1.5em;
+    width: 1.5em;
+    background: #212152;
+    border-radius: 100%;
+    transition: all 0.7s;
+    margin-top: 7px;
+}
+.check-Title label span:after{
+    content: "";
+    position: absolute;
+    border: solid white;
+    border-width: 0 0.10em 0.10em 0;
+    transform: rotate(45deg);
+    width:  0.35em;
+    height: .8em;
+    left: 0.50em;
+    top: 0.20em;
+    opacity: 0;
+    transition:  .3s ease;
+}
+.check-Title label input:checked ~ span::after{
+    opacity: 1;
+}
+
+.titleItem{
+    width: 100%;
+    margin-left: 10px;
+}
+.titleItem p{
+    font-family: 'Inter', sans-serif;
+}
+
+.btnDelete{
+    border: 1px solid black;
+    padding: 15px 20px 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(191, 22,33, 1);
+    color: white;
+    margin: 1px;
+    visibility:hidden;
+}
+.btnDelete label span{
+    display: inline-block;
+    position: relative;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 100%;
+    margin-top: 7px;
+}
+.btnDelete label span:after{
+    content: "\d7";
+    position: absolute;
+    font-size: 60px;
+    top: -25px;
+    left: -3px;
+    cursor: pointer;
+}
+.Item:hover .btnDelete{
+    visibility:visible;
+}
