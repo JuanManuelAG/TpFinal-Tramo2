@@ -1,97 +1,88 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
-import TaskForm from '../TaskForm/TaskForm';
+import { useNavigate } from 'react-router-dom';
+import './TaskListStyle.css'
 
 
 
 
+function TaskList({ taskList, onDelete }) {
 
-function TaskList({ }) {
 
-  const [taskList, setTaskList] = useState([]);
   const [showAllTasks, setShowAllTasks] = useState(false);
-  const [showTaskForm, setShowTaskForm] = useState(false);
 
+  const navigate = useNavigate();
 
-
-  const handleAddTask = (newTask) => {
-    setTaskList([...taskList, newTask]);
-  };
-
-  const handleTaskForm = () => {
-    setShowTaskForm(!showTaskForm);
-  };
-
-
-  const handleTaskComplete = (taskId) => {
-    const updatedTasks = taskList.map((task) =>
-      task.id === taskId ? { ...task, completed: !task.completed } : task
-    );
-    setTaskList(updatedTasks);
-  };
-  const handleDelete = (taskId) => {
-    const filteredTasks = taskList.filter((task) => task.id !== taskId);
-    setTaskList(filteredTasks);
-  };
+  const showTaskForm = () => {
+    navigate('/taskForm')
+      ;
+  }
 
   const handleToggleTasks = () => {
     setShowAllTasks(!showAllTasks);
   };
 
   return (
-    <div className='home'>
-     
+    <>
 
 
-      <input
-        type="text"
-        placeholder="Search"
 
-      />
+      <div className='boxContainer'>
+        <header>
+          <img src="https://i.imgur.com/x5Kd8Rp.jpg" alt="logoTaskWit" />
+          <img src="https://i.imgur.com/3ipHp2e.jpg" alt="iconoUser" />
+        </header>
 
-      <div className='today-add'>
-        <h2>Today</h2>
-        <Router>
-          <NavLink className="add-link" onClick={handleTaskForm}>
-            +
-          </NavLink>
-        </Router>
-      </div>
 
-      <div className="task-list">
+        <input className='search'
+          type="text"
+          placeholder="Search"
 
-        {taskList === undefined ? (
-          <p>No hay datos disponibles.</p>
-        ) : taskList.length === 0 ? (
-          <p>No hay tareas para mostrar.</p>
-        ) : (
-          <div className="tasks">
-            {taskList.map((task) => (
-              <div key={task.id} className="task-item">
-               
-               <input
-          type="checkbox"
-          checked={task.completed}
-          onChange={() => handleTaskComplete(task.id)}
         />
-                <span>{task.titulo}</span>
-                <button onClick={() => handleDelete(task.id)}>Borrar</button>
+
+        <div className='today-Add'>
+          <img src="https://i.imgur.com/Xt8Tl3W.jpg" alt="TodayImg" />
+
+          <span className='btnAdd'>
+            <button onClick={showTaskForm}>
+              <img src="https://i.imgur.com/4hay4Sa.jpg" alt="AddImg" />
+            </button>
+          </span>
+
+        </div>
+
+
+        <div className='boxItem'>
+          <div className='Item'>
+            {taskList === undefined ? (
+              <p>No hay datos disponibles.</p>
+            ) : taskList.length === 0 ? (
+              <p>No hay tareas para mostrar.</p>
+            ) : (
+              <div className="tasks">
+                {taskList.map((task) => (
+                  <div key={task.id} className="task-item">
+                    <div className='check-Title'>
+                      <label>
+                        <input type="checkbox" />
+                        <span></span>
+                      </label>
+                    </div>
+                    <span className='titleItem'>{task.titulo}</span>
+                   <div className='btnDelete'>
+                    <span>
+                    <button onClick={() => onDelete(task.id)} />
+                    </span>
+                  </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
-
-
-        )}
+         
+        </div>
       </div>
-      
-      {!showAllTasks && taskList.length > 4 && (
-        <button onClick={handleToggleTasks}>See more</button>
-      )}
-      {showTaskForm && (
-        <TaskForm addTask={handleAddTask} tasks={taskList} />)}
 
-    </div>
-
+    </>
   );
 };
 
