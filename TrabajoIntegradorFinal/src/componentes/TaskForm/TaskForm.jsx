@@ -8,7 +8,7 @@ const TaskForm = ({}) => {
     const [titulo, setTitulo] = useState('');
     const [subTitulo, setsubTitulo] = useState('');
     const [descripcion, setDescripcion] = useState('');
-    const [valoresMostrados, setValoresMostrados] = useState([]);
+    const [tasks, setTasks] = useState([]);
 
     //modificacion del titulo, subtitulo, descripcion por parte del usuario
     const handleTituloChange = (event) => {
@@ -24,9 +24,13 @@ const TaskForm = ({}) => {
     //los valores seran guardados cuando oprima el boton save
     const handleSubmit = (event) => {
         event.preventDefault();
-      
-      setValoresMostrados([titulo, subTitulo, descripcion]);
-      
+      const newTask = {
+        id:tasks.length + 1,
+        titulo,
+        subTitulo,
+        descripcion
+    }
+        setTasks([...tasks,newTask]);
     };
  
     return(
