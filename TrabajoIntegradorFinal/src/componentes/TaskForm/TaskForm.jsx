@@ -4,11 +4,10 @@ import { useState } from 'react';
 
 
 
-const TaskForm = ({}) => {
+const TaskForm = ({tasks, addTask}) => {
     const [titulo, setTitulo] = useState('');
     const [subTitulo, setsubTitulo] = useState('');
     const [descripcion, setDescripcion] = useState('');
-    const [valoresMostrados, setValoresMostrados] = useState([]);
 
     //modificacion del titulo, subtitulo, descripcion por parte del usuario
     const handleTituloChange = (event) => {
@@ -24,9 +23,16 @@ const TaskForm = ({}) => {
     //los valores seran guardados cuando oprima el boton save
     const handleSubmit = (event) => {
         event.preventDefault();
-      
-      setValoresMostrados([titulo, subTitulo, descripcion]);
-      
+      const newTask = {
+        id:tasks.length + 1,
+        titulo,
+        subTitulo,
+        descripcion
+    }
+    addTask(newTask); 
+    setTitulo('');
+    setsubTitulo('');
+    setDescripcion('');
     };
  
     return(
@@ -121,7 +127,7 @@ const TaskForm = ({}) => {
                                     <span>Category</span>
                                 </span>
                                 <select  id="category">
-                                    <option value="None">Home</option>
+                                    <option value="None">None</option>
                                     <option value="High">High</option>
                                 </select>
                             </div>
