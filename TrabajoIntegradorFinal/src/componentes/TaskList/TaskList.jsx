@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import TaskItem from '../TaskItem/TaskItem.jsx';
-import taskwit from './Images/taskwit.png';
-import FotoUser  from './Images/FotoUser.png';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
-import './TaskList.css'
+
 
 
 
