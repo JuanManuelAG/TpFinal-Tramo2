@@ -27,34 +27,41 @@ main, section{
     justify-content: space-between;
     margin-bottom: 10px;
 }
+.btnAdd button {
+    border: none;
+}
 
 .boxItem{
     width: 100%;
     border: 2px solid #316683;
     border-radius: 7px;
     height: 31em;
-    overflow-x: hidden;
-    overflow-y: scroll;
+   
     width: 100%;
 }
 .Item{
     width: 100%;
     border: 1px solid black;
-    display: flex;
     justify-content: space-between;
     border-top: none;
     border-left: none;
     border-right: none;
     cursor: pointer;
 }
-.check-Title{
-    width: 250px;
+
+.task-item {
     display: flex;
-    margin: 0 0 0 11px;
-    display: flex;
-    justify-content: center;
     align-items: center;
-}
+    width: 100%;
+    height: 80px;
+    position: relative;
+    border-bottom: 2px solid #316683;
+    border-left: 6px solid #316683;
+  }
+
+
+
+
 .check-Title label{
     cursor: pointer;
 }
@@ -70,6 +77,7 @@ main, section{
     border-radius: 100%;
     transition: all 0.7s;
     margin-top: 7px;
+    margin-left: 5px;
 }
 .check-Title label span:after{
     content: "";
@@ -90,22 +98,21 @@ main, section{
 
 .titleItem{
     width: 100%;
-    margin-left: 10px;
-}
-.titleItem p{
+    flex: 1;
     font-family: 'Inter', sans-serif;
+    margin-left: 10px;
+
 }
 
 .btnDelete{
-    border: 1px solid black;
-    padding: 15px 20px 15px 20px;
+    content: 'X';
+    padding: 30px 30px 30px 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(191, 22,33, 1);
     color: white;
-    margin: 1px;
-    visibility:hidden;
+    visibility: hidden
 }
 .btnDelete label span{
     display: inline-block;
@@ -117,8 +124,8 @@ main, section{
 }
 .btnDelete label span:after{
     content: "\d7";
-    position: absolute;
-    font-size: 60px;
+    position: relative;
+    
     top: -25px;
     left: -3px;
     cursor: pointer;
