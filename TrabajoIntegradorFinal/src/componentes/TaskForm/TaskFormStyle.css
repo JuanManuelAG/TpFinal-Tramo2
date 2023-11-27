@@ -20,12 +20,21 @@ header{
 .boxBotonHome{
     display: flex;
     justify-content: flex-start;
-    margin: 20px 15px 15px 30px;
+    margin: 20px 15px 15px 15px;
 }
 .boxBotonHome a{
     font-family: 'Inter', sans-serif;
     text-decoration: none;
     color: #000000;
+}
+.boxHome{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.boxHome img{
+    margin-right: 10px;
+    margin-bottom: 2px;
 }
 .boxForm{
     height: 100%;
@@ -53,7 +62,7 @@ header{
     color: #000000;
 }
 .inputTitulo textarea::placeholder {
-    color: #777777;
+    color: #969696;
 }
 .inputDescrip textarea {
     width: 100%;
@@ -66,7 +75,7 @@ header{
     resize: none;
 }
 .inputDescrip textarea::placeholder {
-    color: #06a4d4;
+    color: #7ec1d5;
 }
 
 .boxStyleIcon-Text{
@@ -133,4 +142,7 @@ header{
     border: none;
     color: white;
     font-family: 'Inter', sans-serif;
+}
+.buttonSave button:active{
+    background-color: #af6e18;
 }

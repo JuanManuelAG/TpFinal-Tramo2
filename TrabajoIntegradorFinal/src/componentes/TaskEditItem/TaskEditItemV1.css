@@ -1,0 +1,78 @@
+.boxHome{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.boxHome img{
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+.TituloId p{
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    font-size: 25px;
+}
+.SubTituloId p{
+    width: 250px;
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    font-size: 15px;
+    color: #06a4d4;
+}
+.tituleInfo{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 15px 0;
+    font-family: 'Inter';
+    color: #12507f;
+}
+.textDescripcionAdd{
+    width: 100%;
+    height: 150px;
+}
+.textDescripcionAdd p{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    color: #06a4d4;
+    font-size: 13px;
+}
+.StyleIcon-Text p{
+    margin: 5px 0 0 0;
+    font-family: 'Inter', sans-serif;
+    color: #12507f;
+}
+.calendariov1{
+    display: flex;
+    align-items: center;
+    font-family: 'Inter';
+    color: #254e6b;
+}
+.priority-v1{
+    border: 2px solid #fbc27f;
+    padding: 5px 20px 5px 20px;
+    border-radius: 7px;
+    font-family: 'Inter';
+    color: #254e6b;
+}
+.buttonHomeBack{
+    width: 100%;
+    height: 190px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonHomeBack button{
+    padding: 7px 60px 7px 60px;
+    border-radius: 10px;
+    background-color: #fa991c;
+    border: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+.buttonHomeBack button:active{
+    background-color: #af6e18;
+}
