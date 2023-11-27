@@ -41,11 +41,6 @@ const TaskForm = ({ tasks, addTask }) => {
         setTitulo('');
         setsubTitulo('');
         setDescripcion('');
-
-        
-
-
-     
     };
 
     return (
@@ -57,8 +52,11 @@ const TaskForm = ({ tasks, addTask }) => {
                 </header>
                 <main>
                     <section>
-                        <div className='boxBotonHome' onClick={showTaskList}>
-                            <a href="#">Home</a>
+                        <div className='boxBotonHome'>
+                            <div className='boxHome'onClick={showTaskList}>
+                                <img src="https://i.imgur.com/38lMw3s.jpg" alt="flecha" height={15}/>
+                                <a href="#">Home</a>
+                            </div>
                         </div>
 
                         <div className='boxForm'>
@@ -68,7 +66,7 @@ const TaskForm = ({ tasks, addTask }) => {
                                         <span className='inputTitulo'>
                                             <textarea
                                                 maxLength={50}
-                                                placeholder='Titulo de algo para luego ser editado'
+                                                placeholder='Titulo de ejemplo que desea poner'
                                                 cols="35"
                                                 rows=""
                                                 value={titulo}
@@ -78,7 +76,7 @@ const TaskForm = ({ tasks, addTask }) => {
                                         <span className='inputDescrip'>
                                             <textarea
                                                 maxLength={68}
-                                                placeholder='Descripcion de algo para luego ser editado y transferido a otro lado'
+                                                placeholder='Escriba aqui su mini descripcion'
                                                 cols="31"
                                                 rows="2"
                                                 value={subTitulo}
@@ -123,7 +121,7 @@ const TaskForm = ({ tasks, addTask }) => {
                                     </span>
                                     <span className='boxDescript'>
                                         <textarea
-                                            placeholder='Descripcion de algo para luego ser editado y transferido a otro lado a siessada'
+                                            placeholder='Escriba aqui su descripcion de la nota que desea poner'
                                             name="#"
                                             id="#"
                                             cols="31"

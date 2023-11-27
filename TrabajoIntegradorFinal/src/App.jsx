@@ -1,6 +1,7 @@
 import TaskList from './componentes/TaskList/TaskList.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TaskForm from './componentes/TaskForm/TaskForm';
+import { TaskEditItem } from './componentes/TaskEditItem/TaskEditItem.jsx';
 import { useEffect, useState } from 'react';
 
 
@@ -15,9 +16,6 @@ function App() {
       setTaskList(JSON.parse(storedList));
     }
   }, []);
-
-  
- 
   
   const handleAddTask = (newTask) => {
     const updatedList = [...taskList, newTask];
@@ -38,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<TaskList taskList={taskList}  onDelete={handleDelete}/>} />
           <Route path="/taskForm" element={ <TaskForm addTask={handleAddTask} tasks={taskList} /> } />
+          <Route path="/taskEditItem" element={ <TaskEditItem /> } />
         </Routes>
            
     </Router>

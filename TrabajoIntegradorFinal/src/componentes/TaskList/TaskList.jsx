@@ -6,20 +6,37 @@ import './TaskListStyle.css'
 
 
 function TaskList({ taskList, onDelete }) {
-
-
   const [showAllTasks, setShowAllTasks] = useState(false);
+  const [mostrarDivOculto, setMostrarDivOculto] = useState(null);
 
   const navigate = useNavigate();
+
+  const showTaskEdit = (taskId, title, subTitle, description) => {
+    // Construir un objeto de estado para pasar al componente de edición
+    const taskData = {
+      taskId,
+      title,
+      subTitle,
+      description,
+    };
+
+    // Navegar al componente de edición y pasar el objeto de estado
+    navigate('/taskEditItem', { state: { taskData } });
+  };
 
   const showTaskForm = () => {
     navigate('/taskForm')
       ;
   }
 
-  const handleToggleTasks = () => {
-    setShowAllTasks(!showAllTasks);
+  const handleMouseEnter = (taskId) => {
+    setMostrarDivOculto(taskId);
   };
+
+  const handleMouseLeave = () => {
+    setMostrarDivOculto(null);
+  };
+
 
   return (
     <>
@@ -56,23 +73,30 @@ function TaskList({ taskList, onDelete }) {
             {taskList === undefined ? (
               <p>No hay datos disponibles.</p>
             ) : taskList.length === 0 ? (
-              <p>No hay tareas para mostrar.</p>
-            ) : (
+              <p className='textNoTareas'>No hay tareas para mostrar.</p>
+              ) : (
               <div className="tasks">
                 {taskList.map((task) => (
-                  <div key={task.id} className="task-item">
+                  <div key={task.id} id={`task-item-${task.id}`} className="task-item" 
+                    onMouseEnter={() => handleMouseEnter(task.id)}
+                    onMouseLeave={handleMouseLeave}>
                     <div className='check-Title'>
                       <label>
                         <input type="checkbox" />
                         <span></span>
                       </label>
                     </div>
-                    <span className='titleItem'>{task.titulo}</span>
-                   <div className='btnDelete'>
-                    <span>
-                    <button onClick={() => onDelete(task.id)} />
-                    </span>
-                  </div>
+                    <span className='titleItem' onClick={() => showTaskEdit(task.id, task.titulo, task.subTitulo, task.descripcion)}>{task.titulo}</span>
+                    <span hidden>{task.subTitulo}</span>
+                    <span hidden>{task.descripcion}</span>
+                    {mostrarDivOculto === task.id && (
+                      <div id={`divOculto-${task.id}`} className='btnDelete' onClick={() => onDelete(task.id)}>
+                        <label>
+                          <span>
+                          </span>
+                        </label>
+                      </div>
+                      )}
                   </div>
                 ))}
               </div>

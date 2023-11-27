@@ -53,14 +53,11 @@ main, section{
     display: flex;
     align-items: center;
     width: 100%;
-    height: 80px;
+    height: 65px;
     position: relative;
     border-bottom: 2px solid #316683;
     border-left: 6px solid #316683;
   }
-
-
-
 
 .check-Title label{
     cursor: pointer;
@@ -73,7 +70,8 @@ main, section{
     position: relative;
     height: 1.5em;
     width: 1.5em;
-    background: #212152;
+    border: 2px solid #212152 ;
+    background: #fbf3f2;
     border-radius: 100%;
     transition: all 0.7s;
     margin-top: 7px;
@@ -85,12 +83,15 @@ main, section{
     border: solid white;
     border-width: 0 0.10em 0.10em 0;
     transform: rotate(45deg);
-    width:  0.35em;
-    height: .8em;
+    width:  0.25em;
+    height: .7em;
     left: 0.50em;
     top: 0.20em;
     opacity: 0;
     transition:  .3s ease;
+}
+.check-Title label input:checked ~ span{
+    background: #212152;
 }
 .check-Title label input:checked ~ span::after{
     opacity: 1;
@@ -101,12 +102,11 @@ main, section{
     flex: 1;
     font-family: 'Inter', sans-serif;
     margin-left: 10px;
-
 }
 
 .btnDelete{
-    content: 'X';
-    padding: 30px 30px 30px 30px;
+    width: 20%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,13 +123,22 @@ main, section{
     margin-top: 7px;
 }
 .btnDelete label span:after{
+    width: 100%;
     content: "\d7";
-    position: relative;
-    
+    position: absolute;
+    font-size: 60px;
     top: -25px;
     left: -3px;
     cursor: pointer;
 }
 .Item:hover .btnDelete{
     visibility:visible;
+}
+.textNoTareas{
+    width: 100%;
+    height: 490px;
+    font-family: 'Inter';
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
